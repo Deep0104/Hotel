@@ -1,0 +1,137 @@
+body {
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+header {
+	height: 100vh;
+	position: relative;
+	background-color: #fff;
+}
+.header-nav {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	height: 60px;
+	padding: 15px 2% 15px 5%;
+	background: #fff;
+	position: absolute;
+	z-index: 1;
+	width: 94%;
+}
+.site-name{
+	font-size: 2.5em;
+	font-family: 'Dancing Script', cursive;
+	background: linear-gradient(45deg, #0B2349 33%, #0D61BC 66%, #8AA9D6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #0B2349;
+}
+.nav-panel{
+	width: 100%;
+	text-align: right;
+	height: 100%;
+}
+.nav-menu {
+	margin: 21px 0;
+}
+.nav-menu-item {
+	display: inline;
+	border-left: 1px solid #0D61BC;
+	box-sizing: border-box;
+	position: relative;
+}
+.nav-menu-item:first-child {
+	border: none;
+}
+.nav-menu-item a {
+	color: #0B2349;
+	padding: 0 3%;
+	box-sizing: border-box;  
+}
+.nav-menu-item a:hover, .nav-menu-item a:active, .nav-menu-item a:focus {
+	color: #8AA9D6;
+}
+
+.submenu {
+	display: none;
+	position: absolute;
+	background-color: #0D61BC;
+	top: 20px;
+	left: 0;
+	text-align: left;
+	z-index: 1;
+	
+	}
+.submenu li {
+	box-sizing: border-box;
+	padding: 10px 35px 10px 20px;
+	white-space: nowrap;
+	background-color: #0D61BC;
+	
+}
+.nav-menu > li:hover .submenu {
+	display: inline-block;
+}
+
+
+
+#slider {
+	background-image: url('/img/mountains-1645078_1920.jpg');
+	background-repeat: no-repeat;
+	position: relative;
+	height: 100%;
+	
+}
+#slider p {
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+}
+#slider .button{
+	position: absolute;
+	z-index: 1;
+	top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+aside {
+	text-align: center;
+	padding: 30px 20px;
+}
+aside input {
+	padding: 5px;
+	margin: 10px 20px 20px 10px;
+}
+main {
+	display: grid;
+	grid-template-columns: 25% 75%;
+	grid-column-gap: 10px;
+}
+
+.about-us {
+	padding: 40px;
+	position: relative;
+	align-content: flex-end;
+}
+.about-us article {
+	text-align: justify;
+	/*width: 45%;*/
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 20px 20px 20px 45px;
+}
+.about-us img {
+	width: 45%;
+	box-sizing: border-box;
+	display: inline-block;
+	
+	
+}
