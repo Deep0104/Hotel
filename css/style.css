@@ -110,16 +110,11 @@ aside input {
 	padding: 5px;
 	margin: 10px 20px 20px 10px;
 }
-main {
-	display: grid;
-	grid-template-columns: 25% 75%;
-	grid-column-gap: 10px;
-}
-
 .about-us {
 	padding: 40px;
 	position: relative;
-	align-content: flex-end;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 .about-us article {
 	text-align: justify;
@@ -129,9 +124,48 @@ main {
 	padding: 20px 20px 20px 45px;
 }
 .about-us img {
-	width: 45%;
+	width: 100%;
 	box-sizing: border-box;
 	display: inline-block;
+	padding-top: 60px;
 	
 	
+}
+.facilities {
+	display: inline-block;
+	width: 24%;
+	text-align: center;
+	padding: 15px;
+	box-sizing: border-box;
+	margin-bottom: 45px;
+
+}
+.facilities-icon {
+	font-size: 3em;
+	color: #0D61BC;
+}
+.activities {
+	text-align: center;
+	padding: 30px 60px;
+}
+.activities-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 60px;
+}
+.activities-item {
+	background-color: #fff;
+	padding: 30px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	height: 650px;
+}
+.activities-img img {
+	width: 90%;
+	max-width: 1280px;
+	max-height: 853px;
+}
+.activities-item p {
+	text-align: justify;
+	margin-bottom: 40px;
 }
