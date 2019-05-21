@@ -112,14 +112,14 @@ header {
     transform: translate(-50%, -50%);
     border: 2px solid #fff;
 }
-aside {
+/*aside {
 	text-align: center;
 	padding: 30px 20px;
 }
 aside input {
 	padding: 5px;
 	margin: 10px 20px 20px 10px;
-}
+}*/
 .about-us {
 	padding: 40px;
 	display: flex;
@@ -185,8 +185,8 @@ aside input {
 }
 .odd-info {
 	background-color: #4E5082;
-	color: #fff;
-	padding: 80px 0;
+	color: #ffffff;
+	padding: 45px 0;
 	font-size: 1.2em;
 	font-weight: 500;
 }
@@ -194,7 +194,6 @@ aside input {
 	font-size: 3em;
 }
 .rooms {
-	color: #0B2349;
 	padding: 3%;
 	justify-content: space-around;
 	align-items: flex-start;
@@ -231,4 +230,35 @@ aside input {
 }
 .rooms-button .button {
 	width: 100%;
+}
+.booking {
+	background-image: url('/img/rough-horn-2146181_1920.jpg');
+	background-position: center;
+	background-blend-mode: multiply;
+}
+.booking-form {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 40px 0 10px 0;
+	flex-wrap: wrap;
+}
+.booking p {
+	padding-bottom: 10px;
+	box-sizing: border-box;
+}
+.booking-input .button:focus {
+	outline: none;
+}
+.contacts {
+	padding: 3%;
+}
+.contacts-info {
+	width: 50%;
+}
+.contacts-info * {
+	margin: 10px 0; 
+} 
+.contacts iframe {
+	width: 50%;
 }

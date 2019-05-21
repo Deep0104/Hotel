@@ -1,3 +1,6 @@
+body {
+	color: #0B2349;
+}
 .button {
 	background-color: rgba(13, 97, 188, 0.8);
     color: #fff;
@@ -41,4 +44,24 @@ section {
 }
 i {
 	color: #0D61BC;
+}
+input {
+	max-width: 300px;
+	font-size: 13px;
+	padding: 6px;
+	border: 2px solid #fff;
+	border-radius: 8px;
+}
+input:focus {
+	border: 2px solid #0D61BC;
+	outline: none;
+}
+.form-btn {
+	border: 1px solid #fff;
+	border-radius: 8px;
+	box-sizing: border-box;
+	margin: 10px;
+}
+a {
+	color: #0B2349;
 }
