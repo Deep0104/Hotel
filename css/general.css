@@ -2,8 +2,8 @@
 	background-color: rgba(13, 97, 188, 0.8);
     color: #fff;
     font-size: 20px;
+    font-size: 1.2vw;
     padding: 15px 30px;
-    border: 2px solid #fff;
     text-transform: uppercase;
     text-align: center;
     box-sizing: border-box;
@@ -19,6 +19,7 @@ h3 {
 }
 h2 {
 	font-size: 1.2em;
+	font-size: 1.4vw;
 	font-weight: 550;
 	margin: 10px; 
 }
@@ -33,4 +34,11 @@ section {
 }
 .even {
 	background-color: #DFE0EB;
+}
+.container {
+	display: flex;
+	justify-content: space-around;
+}
+i {
+	color: #0D61BC;
 }

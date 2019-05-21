@@ -10,8 +10,6 @@ header {
 	background-color: #fff;
 }
 .header-nav {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
 	height: 60px;
 	padding: 15px 2% 15px 5%;
 	background: #fff;
@@ -19,18 +17,29 @@ header {
 	z-index: 1;
 	width: 94%;
 }
+.header-nav a:visited {
+  color: #0B2349;
+}
+.header-nav h1 {
+	display: inline-block;
+}
 .site-name{
-	font-size: 2.5em;
+	font-size: 2.5rem;
 	font-family: 'Dancing Script', cursive;
-	background: linear-gradient(45deg, #0B2349 33%, #0D61BC 66%, #8AA9D6);
+	background: #fff;
+	background: -webkit-linear-gradient(45deg, #0B2349 33%, #0D61BC 66%, #8AA9D6);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	background-clip: text;
 	color: #0B2349;
+	width: 30%
 }
 .nav-panel{
-	width: 100%;
+	width: 69%;
 	text-align: right;
-	height: 100%;
+	display: inline-block;
+	position: absolute;
+	right: 2%;
 }
 .nav-menu {
 	margin: 21px 0;
@@ -101,6 +110,7 @@ header {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    border: 2px solid #fff;
 }
 aside {
 	text-align: center;
@@ -112,28 +122,31 @@ aside input {
 }
 .about-us {
 	padding: 40px;
-	position: relative;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+}
+.about-us .container {
+	flex-wrap: wrap;
 }
 .about-us article {
+	flex: 1;
 	text-align: justify;
-	/*width: 45%;*/
 	box-sizing: border-box;
 	display: inline-block;
 	padding: 20px 20px 20px 45px;
 }
-.about-us img {
-	width: 100%;
+.about-us .img {
+	flex: 1;
 	box-sizing: border-box;
 	display: inline-block;
-	padding-top: 60px;
-	
-	
+	padding-top: 60px;	
+}
+.about-us img {
+	width: 100%;
 }
 .facilities {
 	display: inline-block;
 	width: 24%;
+	min-width: 90px;
 	text-align: center;
 	padding: 15px;
 	box-sizing: border-box;
@@ -142,23 +155,23 @@ aside input {
 }
 .facilities-icon {
 	font-size: 3em;
-	color: #0D61BC;
 }
 .activities {
 	text-align: center;
 	padding: 30px 60px;
 }
 .activities-content {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	column-gap: 60px;
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch
 }
 .activities-item {
 	background-color: #fff;
 	padding: 30px;
 	box-sizing: border-box;
 	border-radius: 5px;
-	height: 650px;
+	align-content: stretch;
+	margin: 1%;
 }
 .activities-img img {
 	width: 90%;
@@ -168,4 +181,54 @@ aside input {
 .activities-item p {
 	text-align: justify;
 	margin-bottom: 40px;
+	font-size: 1.2vw;
+}
+.odd-info {
+	background-color: #4E5082;
+	color: #fff;
+	padding: 80px 0;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+.number {
+	font-size: 3em;
+}
+.rooms {
+	color: #0B2349;
+	padding: 3%;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+.rooms-img img {
+	max-width: 420px;
+	width: 100%;
+}
+.room {
+	margin: 20px 3%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 30%;
+	align-items: stretch;
+
+}
+.room ul {
+	text-align: center;
+}
+.room li {
+	border-bottom: 1px solid #8AA9D6;
+	margin: 5px 10%; 
+	padding: 15px;
+}
+.rooms-prices {
+	padding: 20px 0;
+}
+.rooms-button {
+	display: flex;
+	width: 100%;
+	margin-top: 90px;
+}
+.rooms-button .button {
+	width: 100%;
 }
