@@ -97,8 +97,7 @@ header {
 	display: block;
 	height: 100vh;
 	min-width: 100%;
-	
-	transition: opacity 1s;
+	transition: opacity 1.5s;
 }
 #slider p {
     margin: 0;
