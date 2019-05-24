@@ -4,20 +4,128 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-right\tproperty"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"flex",
+				"flex-direction\tproperty"
+			],
+			[
+				"sp",
+				"space-between\tjustify-content"
+			],
+			[
+				"box",
+				"box-sizing\tproperty"
+			],
+			[
+				"min",
+				"min-width\tproperty"
+			],
+			[
+				"fo",
+				"font-weight\tproperty"
+			],
+			[
+				"bor",
+				"border\tproperty"
+			],
+			[
+				"ma",
+				"margin-left\tproperty"
+			],
+			[
+				"pad",
+				"padding\tproperty"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"p",
+				"placeholder\tAttr"
+			],
+			[
+				"ba",
+				"background-attachment\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"pa",
+				"padding-bottom\tproperty"
+			],
+			[
+				"fl",
+				"flex-end\talign-items"
+			],
+			[
+				"bo",
+				"border\tproperty"
+			],
+			[
+				"border-r",
+				"border-radius\tproperty"
+			],
+			[
+				"al",
+				"align-items\tproperty"
+			],
+			[
+				"margi",
+				"margin\tproperty"
+			],
+			[
+				"su",
+				"sup\tTag"
+			],
+			[
+				"background",
+				"background-color\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"flex-",
+				"flex-basis\tproperty"
+			],
+			[
+				"fle",
+				"flex-grow\tproperty"
+			],
+			[
+				"se",
+				"section\tTag"
+			],
+			[
+				"bord",
+				"border-radius\tproperty"
+			],
+			[
+				"backg",
+				"background-color\tproperty"
+			],
+			[
+				"colu",
+				"column-gap\tproperty"
+			],
+			[
 				"to",
 				"top\tproperty"
 			],
 			[
-				"bo",
-				"box-sizing\tproperty"
-			],
-			[
 				"grid-colu",
 				"grid-column-gap\tproperty"
-			],
-			[
-				"se",
-				"select\tTag"
 			],
 			[
 				"in",
@@ -30,10 +138,6 @@
 			[
 				"tr",
 				"transition\tproperty"
-			],
-			[
-				"ba",
-				"background\tproperty"
 			],
 			[
 				"op",
@@ -56,10 +160,6 @@
 				"url()\tbackground-image"
 			],
 			[
-				"fo",
-				"font-weight\tproperty"
-			],
-			[
 				"font",
 				"font-size\tproperty"
 			],
@@ -74,10 +174,6 @@
 			[
 				"grid-co",
 				"grid-template-columns\tproperty"
-			],
-			[
-				"di",
-				"display\tproperty"
 			],
 			[
 				"li",
@@ -228,10 +324,6 @@
 				"notAvHome"
 			],
 			[
-				"c",
-				"client"
-			],
-			[
 				"cli",
 				"client"
 			],
@@ -246,10 +338,6 @@
 			[
 				"a",
 				"args"
-			],
-			[
-				"su",
-				"submit"
 			],
 			[
 				"getE",
@@ -276,14 +364,6 @@
 				"log"
 			],
 			[
-				"p",
-				"pos"
-			],
-			[
-				"sp",
-				"spesialization"
-			],
-			[
 				"sele",
 				"selector"
 			],
@@ -294,10 +374,6 @@
 			[
 				"j",
 				"justify-content-between \tBootstrap 4 Class"
-			],
-			[
-				"al",
-				"align-self-end \tBootstrap 4 Class"
 			],
 			[
 				"align-s",
@@ -372,14 +448,6 @@
 				"align-content\tproperty"
 			],
 			[
-				"ma",
-				"margin-top\tproperty"
-			],
-			[
-				"box",
-				"box-sizing\tproperty"
-			],
-			[
 				"grid-tem",
 				"grid-template-columns\tproperty"
 			],
@@ -400,48 +468,16 @@
 				"grid-row-start\tproperty"
 			],
 			[
-				"bord",
-				"border-bottom\tproperty"
-			],
-			[
 				"marg",
 				"margin\tproperty"
-			],
-			[
-				"flex",
-				"flex-wrap\tproperty"
 			],
 			[
 				"row",
 				"overflow-wrap\tproperty"
 			],
 			[
-				"bor",
-				"border-bottom\tproperty"
-			],
-			[
-				"fl",
-				"flex-direction\tproperty"
-			],
-			[
-				"mar",
-				"margin-bottom\tproperty"
-			],
-			[
-				"fle",
-				"flex-direction\tproperty"
-			],
-			[
 				"Re",
 				"Rectangle55.png\tw:370 h:370"
-			],
-			[
-				"max",
-				"max-height\tproperty"
-			],
-			[
-				"pa",
-				"padding-bottom\tproperty"
 			],
 			[
 				"grid-",
@@ -458,10 +494,6 @@
 			[
 				"padd",
 				"padding-top\tproperty"
-			],
-			[
-				"margi",
-				"margin-right\tproperty"
 			],
 			[
 				"opt",
@@ -482,38 +514,6 @@
 			[
 				"text-a",
 				"text-align\tproperty"
-			],
-			[
-				"bootstrap",
-				"bootstrap.min.css"
-			],
-			[
-				"col",
-				"color\tproperty"
-			],
-			[
-				"font-s",
-				"font-size\tproperty"
-			],
-			[
-				"ro",
-				"row \tBootstrap 4 Class"
-			],
-			[
-				"he",
-				"header\tTag"
-			],
-			[
-				"met",
-				"meta\tTag"
-			],
-			[
-				"wid",
-				"width\tproperty"
-			],
-			[
-				"pos",
-				"position\tproperty"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2891,
+				"buffer_size": 10392,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -532,7 +532,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 2309,
+				"buffer_size": 4810,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -541,7 +541,7 @@
 			"file": "css/general.css",
 			"settings":
 			{
-				"buffer_size": 355,
+				"buffer_size": 966,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -612,12 +612,12 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/User/FE2019/project",
-		"/C/Users/User/FE2019/project/css",
-		"/C/Users/User/FE2019/project/img"
+		"/C/Users/User/FE2019/Hotel",
+		"/C/Users/User/FE2019/Hotel/css"
 	],
 	"file_history":
 	[
+		"/C/Users/User/FE2019/Hotel/aside.html",
 		"/C/Users/User/FE2019/Task2.CSS/index.html",
 		"/C/Users/User/FE2019/Task2.CSS/css/style.css",
 		"/C/Users/User/FE2019/project/img/mountains-1645078_1920.jpg",
@@ -660,7 +660,7 @@
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 42.4
 	},
 	"find_in_files":
 	{
@@ -693,7 +693,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -702,15 +702,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2891,
+						"buffer_size": 10392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2835,
-								2835
+								10296,
+								10296
 							]
 						],
 						"settings":
@@ -719,10 +719,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 960.0,
+						"translation.y": 1000.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -731,26 +731,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2309,
+						"buffer_size": 4810,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2141,
-								2130
+								3840,
+								3840
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2220.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -759,26 +760,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 355,
+						"buffer_size": 966,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								353,
-								353
+								586,
+								579
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -805,10 +807,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
