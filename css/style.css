@@ -288,3 +288,29 @@ aside input {
 .act-img {
 	min-width: 100%;
 }
+.gallery-section {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top: 85px;
+	box-sizing: border-box;
+	height: 100%;
+	margin-bottom: 115px;
+}
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.gallery img {
+	max-width: 300px;
+	height: 300px;
+	object-fit: cover;
+	margin: 20px;
+	overflow: hidden;
+}
+.gallery img:hover {
+	transform: scale(1.2);
+	box-shadow: 0 0 20px #8AA9D6;
+	transition: 0.5s;
+}

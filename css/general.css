@@ -33,7 +33,7 @@ main {
 	text-align: center;
 }
 section {
-	padding: 0 3%;
+	padding: 0;
 }
 .even {
 	background-color: #DFE0EB;
@@ -71,14 +71,9 @@ aside {
 	text-align: center;
 	padding: 30px 20px;
 }
-aside h2 {
-	position: fixed;
-	top: 100px;
-	right: 5%;
-}
 aside form {
 	position: fixed;
-	top: 140px;
+	top: 130px;
 }
 aside input {
 	padding: 5px;
@@ -120,7 +115,6 @@ footer .form-btn {
 }
 .main {
 	display: flex;
-	margin-top: 85px;
 }
 .main section {
 	padding: 8%;
