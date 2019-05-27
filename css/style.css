@@ -271,49 +271,6 @@ aside input {
 .contacts iframe {
 	width: 50%;
 }
-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 20px 40px;
-	border-top: 1px solid #8AA9D6;
-}
-footer form {
-	width: 50%;
-}
-footer input {
-	border: 2px solid #DFE0EB;
-	margin: 10px; 
-	width: 60%;
-}
-footer .form-btn {
-	margin: 10px;
-	font-size: 0.8em;
-	padding: 5px;
-	width: 20%;
-	min-width: 80px;
-	height: 30px;
-	outline: none;
-}
-.footer {
-	font-size: 1.2em;
-	width: 50%;
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-end;
-}
-.footer .site-name {
-	font-size: 1.5em;
-}
-.main {
-	display: flex;
-	margin-top: 85px;
-}
-.main section {
-	padding: 8%;
-	width: 75%;
-	text-align: justify;
-}
 .activities-page-item {
 	width: 75%;
 	margin-bottom: 60px;
@@ -322,4 +279,12 @@ footer .form-btn {
 .activities-page-item .button {
 	position: relative;
 	top: 30px;
+}
+.act-h2 {
+	text-align: center;
+	font-weight: 600;
+	font-size: 2em;
+}
+.act-img {
+	min-width: 100%;
 }

@@ -34,36 +34,59 @@ function slide(container) {
 		count++;
 	}, 3500)
 }
-var slider = document.getElementById('slider');
-slide(slider);
 
-//Search
-// function Search(){
-// 	var text = document.getElementById('search').value
-// 	var search = new RegExp(text, "ig");
-// 	var body = document.getElementsByTagName('body')[0];
-// 	for (var i = 0; i < body.childNodes.length; i++) {
-// 		var content = body.childNodes;
-// 		var textt = content.innerHTML;
-// 		if (textt.search(search) != -1) {
-//     		content[i].setAttribute('style', 'background-color:yellow');
-//     		}
-// 	}
-// }
-function searchTextOnPage(inputId) { 
-  var obj = window.document.getElementById(inputId); 
-  var textToFind; 
-  if (obj) { 
-    textToFind = obj.value; 
-  } else { 
-    alert("Немогу найти текст = " + inputId); 
-    return; 
-  } 
-  if (textToFind == "") { 
-    alert("Вы ничего не ввели"); 
-    return; 
-  } 
-  document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/g","<b style='color:red'>"+textToFind+"</b>")); 
-  var obj = window.document.getElementById(inputId); 
-  obj.value = textToFind; 
-} 
+
+// Search
+function searchTextOnPage(inputId){
+	var content = document.getElementById('content');
+	var span = content.getElementsByTagName('span');
+	for (var i = 0; i < span.length; i++) {
+		span[i].removeAttribute('style');
+	}
+	var text = document.getElementById(inputId).value
+	var replace = new RegExp(text, "ig");
+	console.log(replace);
+		if (content.innerHTML.search(replace) != -1) {
+    		content.innerHTML = content.innerHTML.replace(replace, '<span style="background-color:yellow">' + text + '</span>')
+    		}
+}
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+
+	var sPageURL = window.location.search.substring(1),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
+
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
+
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+		}
+	}
+};
+
+// SPA
+$(function() {
+
+	let pageName = getUrlParameter('page') === undefined ? 'main' : getUrlParameter('page');
+
+	$.ajax({
+		url: pageName + ".html",
+		dataType : "html",
+		success: function (data)
+		{
+			document.getElementById("content").innerHTML = data;
+
+			var slider = document.getElementById('slider');
+
+			if (slider)
+				slide(slider);
+		},
+		error: function () {
+			document.getElementById("content").innerHTML = '404. Page is not found(';
+		}
+	});
+});

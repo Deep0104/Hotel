@@ -71,7 +71,59 @@ aside {
 	text-align: center;
 	padding: 30px 20px;
 }
+aside h2 {
+	position: fixed;
+	top: 100px;
+	right: 5%;
+}
+aside form {
+	position: fixed;
+	top: 140px;
+}
 aside input {
 	padding: 5px;
 	margin: 10px 20px 20px 10px; 
+}
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 40px;
+	border-top: 1px solid #8AA9D6;
+}
+footer form {
+	width: 50%;
+}
+footer input {
+	border: 2px solid #DFE0EB;
+	margin: 10px; 
+	width: 60%;
+}
+footer .form-btn {
+	margin: 10px;
+	font-size: 0.8em;
+	padding: 5px;
+	width: 20%;
+	min-width: 80px;
+	height: 30px;
+	outline: none;
+}
+.footer {
+	font-size: 1.2em;
+	width: 50%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+.footer .site-name {
+	font-size: 1.5em;
+}
+.main {
+	display: flex;
+	margin-top: 85px;
+}
+.main section {
+	padding: 8%;
+	width: 75%;
+	text-align: justify;
 }
