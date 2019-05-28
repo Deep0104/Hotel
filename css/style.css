@@ -265,6 +265,9 @@ aside input {
 .contacts-info {
 	width: 50%;
 }
+.contacts-info h2 {
+	font-weight: 600;
+}
 .contacts-info * {
 	margin: 10px 0; 
 } 
@@ -319,7 +322,6 @@ aside input {
 	transition: 0.5s;
 }
 .gallery-img:hover {
-	box-shadow: 0 0 30px #4E5082;
 	transition: 0.5s;
 }
 #previous, #current-number, #next {
@@ -328,4 +330,47 @@ aside input {
 	color: #4E5082;
 	padding: 5px 10px;
 	cursor: pointer;
+}
+.contacts-page {
+	max-width: 100%;
+	text-align: center;
+}
+.contacts-page h2 {
+	text-align: center;
+	width: 100%;
+	font-size: 2em;
+	font-weight: 600;
+	margin-top: 30px;
+}
+.contacts-i {
+	margin: 25px 0 5px 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.contacts-i .adress, .contacts-i form {
+	width: 30%;
+}
+.contacts-i form {
+	text-align: center;
+	background-color: rgba(78, 80, 130, 0.6);
+	border-radius: 7px;
+	padding: 15px;
+}
+.book {
+	margin-top: 90px;
+	height: 75vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: rgba(78, 80, 130, 0.3)
+}
+.book h2 {
+	font-size: 2em;
+	font-weight: 600;
+}
+.book input {
+	margin: 15px;
 }
