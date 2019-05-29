@@ -1,0 +1,290 @@
+[
+    {
+        "type": "Standard double room",
+        "adults": "2",
+        "children": "0",
+        "beds": "1 queen size bed",
+        "servises": "carpeted, heating, wi-fi",
+        "area": "18",
+        "bathroom": "in the room",
+        "price": "260",
+        "booked": [
+            "2019-06-13T21:00:00.000Z",
+            "2019-06-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-06-16T21:00:00.000Z",
+            "2019-08-02T21:00:00.000Z",
+            "2019-08-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Standard double room",
+        "adults": "2",
+        "children": "0",
+        "beds": "1 queen size bed",
+        "servises": "carpeted, heating, wi-fi",
+        "area": "18",
+        "bathroom": "communal",
+        "price": "220",
+        "booked": [
+            "2019-07-13T21:00:00.000Z",
+            "2019-07-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-08-14T21:00:00.000Z",
+            "2019-08-15T21:00:00.000Z",
+            "2019-08-16T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Econom single room",
+        "adults": "1",
+        "children": "0",
+        "beds": "1 single bed",
+        "servises": " breakfast, heating, wi-fi",
+        "area": "14",
+        "bathroom": "communal",
+        "price": "110",
+        "booked": [
+            "2019-06-09T21:00:00.000Z",
+            "2019-06-17T21:00:00.000Z",
+            "2019-06-30T21:00:00.000Z",
+            "2019-07-01T21:00:00.000Z",
+            "2019-07-02T21:00:00.000Z",
+            "2019-07-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Two-Bedroom Apartment",
+        "adults": "2",
+        "children": "2",
+        "beds": "2 queen size beds",
+        "servises": "air-conditioning, breakfast, wi-fi",
+        "area": "36",
+        "bathroom": "in the room",
+        "price": "500",
+        "booked": [
+            "2019-09-09T21:00:00.000Z",
+            "2019-09-10T21:00:00.000Z",
+            "2019-09-11T21:00:00.000Z",
+            "2019-09-12T21:00:00.000Z",
+            "2019-09-13T21:00:00.000Z",
+            "2019-09-14T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Two-Bedroom Apartment",
+        "adults": "2",
+        "children": "2",
+        "beds": "2 queen size beds",
+        "servises": "air-conditioning, breakfast, wi-fi",
+        "area": "36",
+        "bathroom": "communal",
+        "price": "440",
+        "booked": [
+            "2019-06-13T21:00:00.000Z",
+            "2019-06-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-06-16T21:00:00.000Z",
+            "2019-08-02T21:00:00.000Z",
+            "2019-08-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Standard double room",
+        "adults": "2",
+        "children": "0",
+        "beds": "1 queen size bed",
+        "servises": "carpeted, heating, wi-fi",
+        "area": "18",
+        "bathroom": "communal",
+        "price": "220",
+        "booked": [
+            "2019-07-13T21:00:00.000Z",
+            "2019-07-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-08-14T21:00:00.000Z",
+            "2019-08-15T21:00:00.000Z",
+            "2019-08-16T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Standard double room",
+        "adults": "2",
+        "children": "0",
+        "beds": "1 queen size bed",
+        "servises": "carpeted, heating, wi-fi",
+        "area": "18",
+        "bathroom": "in the room",
+        "price": "260",
+        "booked": [
+            "2019-06-09T21:00:00.000Z",
+            "2019-06-17T21:00:00.000Z",
+            "2019-06-30T21:00:00.000Z",
+            "2019-07-01T21:00:00.000Z",
+            "2019-07-02T21:00:00.000Z",
+            "2019-07-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Two-Bedroom Apartment",
+        "adults": "2",
+        "children": "2",
+        "beds": "2 queen size beds",
+        "servises": "air-conditioning, breakfast, wi-fi",
+        "area": "36",
+        "bathroom": "in the room",
+        "price": "500",
+        "booked": [
+            "2019-06-13T21:00:00.000Z",
+            "2019-06-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-06-16T21:00:00.000Z",
+            "2019-08-02T21:00:00.000Z",
+            "2019-08-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Econom single room",
+        "adults": "1",
+        "children": "0",
+        "beds": "1 single bed",
+        "servises": " breakfast, heating, wi-fi",
+        "area": "14",
+        "bathroom": "communal",
+        "price": "110",
+        "booked": [
+            "2019-09-09T21:00:00.000Z",
+            "2019-09-10T21:00:00.000Z",
+            "2019-09-11T21:00:00.000Z",
+            "2019-09-12T21:00:00.000Z",
+            "2019-09-13T21:00:00.000Z",
+            "2019-09-14T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Standard double room",
+        "adults": "2",
+        "children": "0",
+        "beds": "1 queen size bed",
+        "servises": "carpeted, heating, wi-fi",
+        "area": "18",
+        "bathroom": "communal",
+        "price": "220",
+        "booked": [
+            "2019-06-09T21:00:00.000Z",
+            "2019-06-17T21:00:00.000Z",
+            "2019-06-30T21:00:00.000Z",
+            "2019-07-01T21:00:00.000Z",
+            "2019-07-02T21:00:00.000Z",
+            "2019-07-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Econom single room",
+        "adults": "1",
+        "children": "0",
+        "beds": "1 single bed",
+        "servises": " breakfast, heating, wi-fi",
+        "area": "14",
+        "bathroom": "communal",
+        "price": "110",
+        "booked": [
+            "2019-09-09T21:00:00.000Z",
+            "2019-09-10T21:00:00.000Z",
+            "2019-09-11T21:00:00.000Z",
+            "2019-09-12T21:00:00.000Z",
+            "2019-09-13T21:00:00.000Z",
+            "2019-09-14T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Two-Bedroom Apartment",
+        "adults": "2",
+        "children": "2",
+        "beds": "2 queen size beds",
+        "servises": "air-conditioning, breakfast, wi-fi",
+        "area": "36",
+        "bathroom": "in the room",
+        "price": "500",
+        "booked": [
+            "2019-07-13T21:00:00.000Z",
+            "2019-07-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-08-14T21:00:00.000Z",
+            "2019-08-15T21:00:00.000Z",
+            "2019-08-16T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Two-Bedroom Apartment",
+        "adults": "2",
+        "children": "2",
+        "beds": "2 queen size beds",
+        "servises": "air-conditioning, breakfast, wi-fi",
+        "area": "36",
+        "bathroom": "communal",
+        "price": "440",
+        "booked": [
+            "2019-09-09T21:00:00.000Z",
+            "2019-09-10T21:00:00.000Z",
+            "2019-09-11T21:00:00.000Z",
+            "2019-09-12T21:00:00.000Z",
+            "2019-09-13T21:00:00.000Z",
+            "2019-09-14T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Econom single room",
+        "adults": "1",
+        "children": "0",
+        "beds": "1 single bed",
+        "servises": " breakfast, heating, wi-fi",
+        "area": "14",
+        "bathroom": "communal",
+        "price": "110",
+        "booked": [
+            "2019-06-09T21:00:00.000Z",
+            "2019-06-17T21:00:00.000Z",
+            "2019-06-30T21:00:00.000Z",
+            "2019-07-01T21:00:00.000Z",
+            "2019-07-02T21:00:00.000Z",
+            "2019-07-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Econom single room",
+        "adults": "1",
+        "children": "0",
+        "beds": "1 single bed",
+        "servises": " breakfast, heating, wi-fi",
+        "area": "14",
+        "bathroom": "communal",
+        "price": "110",
+        "booked": [
+            "2019-06-13T21:00:00.000Z",
+            "2019-06-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-06-16T21:00:00.000Z",
+            "2019-08-02T21:00:00.000Z",
+            "2019-08-03T21:00:00.000Z"
+        ]
+    },
+    {
+        "type": "Standard double room",
+        "adults": "2",
+        "children": "0",
+        "beds": "1 queen size bed",
+        "servises": "carpeted, heating, wi-fi",
+        "area": "18",
+        "bathroom": "in the room",
+        "price": "260",
+        "booked": [
+            "2019-07-13T21:00:00.000Z",
+            "2019-07-14T21:00:00.000Z",
+            "2019-06-15T21:00:00.000Z",
+            "2019-08-14T21:00:00.000Z",
+            "2019-08-15T21:00:00.000Z",
+            "2019-08-16T21:00:00.000Z"
+        ]
+    }
+]

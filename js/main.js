@@ -51,6 +51,8 @@ function slide(container) {
 //     		}
 // }
 
+createRoomsArr();
+var rooms = [];
 
 var getUrlParameter = function getUrlParameter(sParam) {
 
@@ -89,7 +91,10 @@ $(function() {
 			if (gallery) {
 				setVar();
 				pagination();
-				
+			}
+			var roomsPage = document.getElementById('rooms');
+			if (roomsPage) {
+				createRoomsTable(rooms);
 			}
 		},
 		error: function () {
@@ -128,8 +133,6 @@ function pagination() {
 	var next = document.getElementById('next');
 	var previous = document.getElementById('previous');
 	
-	
-	// console.log(imgContainer.length);
 	function fillGalery() {
 		for (var i = 0; i < imgContainer.length; i++) {
 			imgContainer[i].innerHTML = '';
@@ -166,4 +169,62 @@ function prev() {
 	pagination();
 }
 
-	
+// Rooms
+
+function createRoomsArr() {
+	$.ajax({
+		url: 'rooms.json',
+		dataType: 'json',
+		success: function (data) {
+			rooms = data;
+
+		}
+		// rooms = $.parseJSON(roomsArr);
+	});
+}
+
+function createRoomsTable(arr) {
+	var body = document.getElementById('rooms-data'); 
+	var table = document.createElement('table');
+	table.setAttribute('id', 'table')
+	table.innerHTML = `<thead id="thead">
+				<tr>
+					<th>№</th>
+					<th>Type</th>
+					<th>Adults</th>
+					<th>Children</th>
+					<th>Beds</th>
+					<th>Servises</th>
+					<th>Area, m<sup>2</sup></th>
+					<th>Bathroom</th>
+					<th>Price, USD/night</th>
+				</tr>
+			</thead>`;
+	var tbody = document.createElement('tbody');
+	var a;
+	for (i = 0; i < arr.length; i++) {
+		if (arr[i].type == "Standard double room") {
+			a = "?page=room1";
+		}
+		else if (arr[i].type == "Econom single room") {
+			a = "?page=room2";
+		}
+		else a = "?page=room3";
+		var num = i + 1;
+		var trow = document.createElement('tr');
+		trow.innerHTML = '<td id="room-num">' + num + '</td>' +
+						 '<td id="type' + i + '\"><a href=' + a + '>' +arr[i].type + '</a></td>' +
+			             '<td id="adults' + i + '">' +arr[i].adults + '</td>' +
+			             '<td id="children' + i + '">' +arr[i].children + '</td>' +
+			             '<td id="beds' + i + '">' +arr[i].beds + '</td>' +
+			             '<td id="servises' + i + '">' +arr[i].servises + '</td>' +
+			             '<td id="area' + i + '">' + arr[i].area + '</td>' +
+			             '<td id="bathroom' + i + '">' +arr[i].bathroom + '</td>' +
+			             '<td id="price' + i + '">' +arr[i].price + '</td>';
+		tbody.appendChild(trow);
+
+			              
+	}
+	table.appendChild(tbody);
+	body.appendChild(table);
+}

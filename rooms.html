@@ -1,0 +1,19 @@
+<section id="rooms">
+	<div id="sortFilter">
+		<form onsubmit="return false">
+			<div id="sort">
+				Sort<br>
+				<input type="radio" name="gender" value="lowToHigh"> Price Low to High<br>
+				<input type="radio" name="gender" value="highToLow"> Price High to Low<br>
+			</div>
+			<div id="filter">
+				Filter<br>
+				<input type="checkbox" name="1adult" value="1adult"> 1 adult<br>
+				<input type="checkbox" name="2adults" value="2adults"> 2 adults<br>
+				<input type="checkbox" name="children" value="children"> With children<br>
+				Price from <input type="number" name="min-price" min="110" max="500" placeholder="110"> to <input type="number" name="min-price" min="110" max="500" placeholder="500">.
+			</div>
+		</form>
+	</div>
+	<div id="rooms-data"></div>
+</section>

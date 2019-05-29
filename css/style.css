@@ -318,11 +318,12 @@ aside input {
 	object-fit: cover;
 }
 .gallery-img img:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	transition: 0.5s;
 }
 .gallery-img:hover {
 	transition: 0.5s;
+	box-shadow: 0 0 20px rgb(78, 80, 130);
 }
 #previous, #current-number, #next {
 	border: 1px solid #8AA9D6;
@@ -373,4 +374,33 @@ aside input {
 }
 .book input {
 	margin: 15px;
+}
+#rooms {
+	margin-top: 115px;
+}
+#table {
+	border: 1px solid #8AA9D6;
+	border-collapse: collapse;
+	width: 90%;
+	margin: 30px 5%;
+
+}
+#rooms {
+	text-align: justify;
+}
+#table td, #table th {
+	text-align: left;
+	border: 1px solid #8AA9D6;
+	padding: 5px;
+}
+#sortFilter {
+	width: 90%;
+	margin: 30px 5%;
+}
+#sortFilter form {
+	line-height: 2em;
+}
+#sortFilter input {
+	margin: 0 5px;
+	border: 2px solid #DFE0EB; 
 }
