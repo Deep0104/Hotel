@@ -228,3 +228,101 @@ function createRoomsTable(arr) {
 	table.appendChild(tbody);
 	body.appendChild(table);
 }
+
+function setDisplay(element) {
+	var body = document.getElementById(element);
+	var display = body.style.display;
+	body.style.display = display == 'none' ? 'block' : 'none';
+}
+
+function sortTable(index) {
+	var sort = document.getElementsByName('sort');
+	var sort_value;
+	var table = document.getElementById('table');
+	var tbody = table.querySelector('tbody');
+	var tbodyArray = [].slice.call(tbody.rows);
+	
+	for(var i = 0; i < sort.length; i++){
+    	if(sort[i].checked) {
+        	sort_value = sort[i].value;
+    	}
+	}
+	switch (sort_value) {
+    case 'lowToHigh':
+      compare = function(a, b) {
+        if (a.cells[index].innerHTML > b.cells[index].innerHTML) return 1;
+        else return -1;
+      };
+      break;
+    case 'highToLow':
+      compare = function(a, b) {
+        if (a.cells[index].innerHTML < b.cells[index].innerHTML) return 1;
+        else return -1;
+      };
+      break;
+     case undefined:
+       compare = function() {
+       	return false;
+       }
+	}
+	tbodyArray.sort(compare);
+
+	for (var i = 0; i < tbodyArray.length; i++) {
+    	tbody.appendChild(tbodyArray[i]);
+	}
+
+	table.appendChild(tbody);
+}
+
+function filterTable() {
+	var values = [];
+	var checkbox = document.getElementsByClassName('checkbox');
+	var filterPrice = document.getElementsByClassName('filterPrice');
+	for (var i = 0; i < checkbox.length; i++) {
+		values[i] = checkbox[i].value;
+		if (!checkbox[i].checked) {
+			values[i] = null;
+		}
+	}
+	for (var j = 0; j < filterPrice.length; j++) {
+		values[i + j] = filterPrice[j].value;
+
+	}
+	if (filterPrice[0].value == "") {
+		values[i] = 0;
+	}
+	if (filterPrice[1].value == "") {
+		values[i + 1] = Infinity;
+	}
+	var table = document.getElementById('table');
+	var tbody = table.querySelector('tbody');
+	for (var i = 0; i < tbody.rows.length; i++) {
+		tbody.rows[i].style.display = 'table-row';
+		if (tbody.rows[i].cells[2].innerHTML != values[0] && values[0] != null) {
+				tbody.rows[i].style.display = 'none';
+		}
+		if (tbody.rows[i].cells[2].innerHTML != values[1] && values[1] != null) {
+				tbody.rows[i].style.display = 'none';
+		}
+		if (values[0] != null && values[1] != null) {
+			tbody.rows[i].style.display = 'table-row';
+		}
+		if (tbody.rows[i].cells[3].innerHTML != values[2] && values[2] != null) {
+				tbody.rows[i].style.display = 'none';
+		}
+		if (tbody.rows[i].cells[7].innerHTML != values[3] && values[3] != null) {
+				tbody.rows[i].style.display = 'none';
+		}
+		if (tbody.rows[i].style.display == 'none') {
+			continue
+		} else if (tbody.rows[i].cells[8].innerHTML >= values[4] && tbody.rows[i].cells[8].innerHTML <= values[5]) {
+			tbody.rows[i].style.display = 'table-row';
+		} else tbody.rows[i].style.display = 'none';
+	}
+
+
+}
+function sortFilter() {
+	sortTable(8);
+	filterTable();
+}

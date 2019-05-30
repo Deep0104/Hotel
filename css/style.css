@@ -404,3 +404,15 @@ aside input {
 	margin: 0 5px;
 	border: 2px solid #DFE0EB; 
 }
+#sort-filter {
+	background-color: rgba(223, 224, 235, 0.95);
+	padding: 30px;
+}
+#sort-filter .button {
+	margin-top: 15px;
+	width: 115px;
+	font-size: 1em;
+}
+#sort-filter input {
+	width: 50px;
+}

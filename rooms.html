@@ -1,18 +1,21 @@
 <section id="rooms">
 	<div id="sortFilter">
-		<form onsubmit="return false">
+		<div class="button" onclick='setDisplay("sort-filter")'>Sort & Filter</div>
+		<form onsubmit="return false" id="sort-filter" style="display: none;">
 			<div id="sort">
 				Sort<br>
-				<input type="radio" name="gender" value="lowToHigh"> Price Low to High<br>
-				<input type="radio" name="gender" value="highToLow"> Price High to Low<br>
+				<input type="radio" name="sort" value="lowToHigh"> Price Low to High<br>
+				<input type="radio" name="sort" value="highToLow"> Price High to Low<br>
 			</div>
 			<div id="filter">
 				Filter<br>
-				<input type="checkbox" name="1adult" value="1adult"> 1 adult<br>
-				<input type="checkbox" name="2adults" value="2adults"> 2 adults<br>
-				<input type="checkbox" name="children" value="children"> With children<br>
-				Price from <input type="number" name="min-price" min="110" max="500" placeholder="110"> to <input type="number" name="min-price" min="110" max="500" placeholder="500">.
+				<input type="checkbox" name="adult" value="1" class="checkbox"> 1 adult<br>
+				<input type="checkbox" name="adults" value="2" class="checkbox"> 2 adults<br>
+				<input type="checkbox" name="children" value="2" class="checkbox"> With children<br>
+				<input type="checkbox" name="bathroom" value="in the room" class="checkbox"> Bath in the room<br>
+				Price from <input type="number" name="min-price" min="110" max="500" placeholder="110" class="filterPrice"> to <input type="number" name="min-price" min="110" max="500" placeholder="500" class="filterPrice">.
 			</div>
+			<input class="button" type="submit" value="Submit" onsubmit="return false" onclick="sortFilter()"></input>
 		</form>
 	</div>
 	<div id="rooms-data"></div>
