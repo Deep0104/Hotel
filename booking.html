@@ -3,22 +3,22 @@
     <form action="#" class="booking-form" onsubmit="return false">
         <div class="booking-input">
             <p>CHECK-IN</p>
-            <input type="date" name="chek-in">
+            <input type="date" name="chek-in" required>
         </div>
         <div class="booking-input">
             <p>CHECK-OUT</p>
-            <input type="date" name="chek-out">
+            <input type="date" name="chek-out" required>
         </div>
         <div class="booking-input">
             <p>ADULTS</p>
-            <input type="number" name="adults">
+            <input type="number" name="adults" min="1" max="2" value="1">
         </div>
         <div class="booking-input">
             <p>CHILDREN</p>
-            <input type="number" name="children">
+            <input type="number" name="children" min="0" max="2" value="0">
         </div>
         <div class="booking-input">
-            <button type="select" class="button form-btn">Search</button>
+            <button type="select" class="button form-btn" onclick="displayAvRooms()">Search</button>
         </div>
     </form>
 </section>

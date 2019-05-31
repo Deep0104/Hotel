@@ -54,6 +54,7 @@ function slide(container) {
 createRoomsArr();
 var rooms = [];
 
+
 var getUrlParameter = function getUrlParameter(sParam) {
 
 	var sPageURL = window.location.search.substring(1),
@@ -179,7 +180,6 @@ function createRoomsArr() {
 			rooms = data;
 
 		}
-		// rooms = $.parseJSON(roomsArr);
 	});
 }
 
@@ -278,51 +278,90 @@ function filterTable() {
 	var values = [];
 	var checkbox = document.getElementsByClassName('checkbox');
 	var filterPrice = document.getElementsByClassName('filterPrice');
-	for (var i = 0; i < checkbox.length; i++) {
-		values[i] = checkbox[i].value;
-		if (!checkbox[i].checked) {
-			values[i] = null;
-		}
-	}
-	for (var j = 0; j < filterPrice.length; j++) {
-		values[i + j] = filterPrice[j].value;
-
-	}
-	if (filterPrice[0].value == "") {
-		values[i] = 0;
-	}
-	if (filterPrice[1].value == "") {
-		values[i + 1] = Infinity;
-	}
+	var lowestPrice, highestPrice;
 	var table = document.getElementById('table');
 	var tbody = table.querySelector('tbody');
 	for (var i = 0; i < tbody.rows.length; i++) {
 		tbody.rows[i].style.display = 'table-row';
-		if (tbody.rows[i].cells[2].innerHTML != values[0] && values[0] != null) {
-				tbody.rows[i].style.display = 'none';
+		if (checkbox[0].checked && checkbox[0].value != tbody.rows[i].cells[2].innerHTML) {
+			tbody.rows[i].style.display = 'none';
 		}
-		if (tbody.rows[i].cells[2].innerHTML != values[1] && values[1] != null) {
-				tbody.rows[i].style.display = 'none';
+		if (checkbox[1].checked && checkbox[1].value != tbody.rows[i].cells[2].innerHTML) {
+			tbody.rows[i].style.display = 'none';
 		}
-		if (values[0] != null && values[1] != null) {
+		if (checkbox[1].checked && checkbox[0].checked) {
 			tbody.rows[i].style.display = 'table-row';
 		}
-		if (tbody.rows[i].cells[3].innerHTML != values[2] && values[2] != null) {
-				tbody.rows[i].style.display = 'none';
+		if (checkbox[2].checked && checkbox[2].value != tbody.rows[i].cells[3].innerHTML) {
+			tbody.rows[i].style.display = 'none';
 		}
-		if (tbody.rows[i].cells[7].innerHTML != values[3] && values[3] != null) {
-				tbody.rows[i].style.display = 'none';
+		if (checkbox[3].checked && checkbox[3].value != tbody.rows[i].cells[7].innerHTML) {
+			tbody.rows[i].style.display = 'none';
 		}
+		lowestPrice = filterPrice[0].value != '' ? filterPrice[0].value : 0;
+		highestPrice = filterPrice[1].value != '' ? filterPrice[1].value : Infinity;
 		if (tbody.rows[i].style.display == 'none') {
 			continue
-		} else if (tbody.rows[i].cells[8].innerHTML >= values[4] && tbody.rows[i].cells[8].innerHTML <= values[5]) {
+		} else if (tbody.rows[i].cells[8].innerHTML >= lowestPrice && tbody.rows[i].cells[8].innerHTML <= highestPrice) {
 			tbody.rows[i].style.display = 'table-row';
 		} else tbody.rows[i].style.display = 'none';
 	}
-
-
 }
+
 function sortFilter() {
 	sortTable(8);
 	filterTable();
+}
+
+// Booking
+var roomsAvailable = [];
+function availableRooms() {
+	roomsAvailable.length = 0;
+	var checkIn = new Date(document.getElementsByName('chek-in')[0].valueAsDate);
+	var checkOut = new Date(document.getElementsByName('chek-out')[0].valueAsDate);
+	checkInMs = checkIn.getTime() - 10800000;
+	checkOutMs = checkOut.getTime() - 10800000;
+	var numOfAdults = document.getElementsByName('adults')[0].value;
+	var numOfChildren = document.getElementsByName('children')[0].value;
+	function notBelongsToInterval(element, index, array) {
+			if (element < checkInMs || element > checkOutMs) {
+				return element;
+			}
+		}
+	for (var i = 0; i < rooms.length; i++) {
+		rooms[i].number = i + 1;
+		for (var j = 0; j < rooms[i].booked.length; j++) {
+			var date = new Date(rooms[i].booked[j]);
+			rooms[i].booked[j] = date.getTime();
+		}
+		if (rooms[i].booked.every(notBelongsToInterval) && rooms[i].adults >= numOfAdults && rooms[i].children >= numOfChildren) {
+		roomsAvailable.push(rooms[i]);
+		}
+	}
+}
+
+function displayAvRooms() {
+	availableRooms();
+	var container = document.createElement('div');
+	container.id = 'available-rooms-container';
+	container.innerHTML = '<button id="close">X<div>';
+	if (roomsAvailable.length == 0) {
+		var p = document.createElement('p');
+		p.innerHTML = 'There are no free rooms. Please try another dates.';
+		container.appendChild(p);
+	} else {
+		var table = document.createElement('table');
+		for (var i = 0; i < roomsAvailable.length; i++) {
+		var trow = document.createElement('tr');
+		trow.innerHTML = '<td>№ ' + roomsAvailable[i].number + '</td><td>' + roomsAvailable[i].type + '</td><td>' + 
+		roomsAvailable[i].price + ' $</td><td class="bookingTable"><form onsubmit="return false" method="post" action="#"><input type="text" placeholder="Name & Phone Number" required><input type="submit" class="button" value="Book"></form></td>'
+		table.appendChild(trow);
+		}
+		container.appendChild(table);
+	}
+	document.body.appendChild(container);
+	document.getElementById("close").addEventListener('click', function() {close();})
+}
+function close() {
+	document.body.removeChild(document.getElementById('available-rooms-container'));	
 }
