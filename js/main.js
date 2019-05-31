@@ -342,6 +342,9 @@ function availableRooms() {
 
 function displayAvRooms() {
 	availableRooms();
+	if (document.getElementsByName('chek-in')[0].value == '' && document.getElementsByName('chek-out')[0].value == '') {
+		return;
+	}
 	var container = document.createElement('div');
 	container.id = 'available-rooms-container';
 	container.innerHTML = '<button id="close">X<div>';

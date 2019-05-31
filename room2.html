@@ -16,16 +16,16 @@
         </div>			
 	</section>
 	<aside class="sidebar">
-		<form action="#">
+		<form action="#" onsubmit="return false">
 			CHECK-IN<br>
-			<input type="date" name="chek-in"><br>
+			<input type="date" name="chek-in" required><br>
 			CHECK-OUT<br>
-			<input type="date" name="chek-out"><br>
+			<input type="date" name="chek-out" required><br>
 			ADULTS<br>
-			<input type="number" name="adults"><br>
+			<input type="number" name="adults" min="1" max="2" value="1"><br>
 			CHILDREN<br>
-			<input type="number" name="children"><br>
-			<input type="select" class="button" value="Search">
+			<input type="number" name="children" min="0" max="2" value="0"><br>
+			<input type="submit" class="button" value="Search" onclick="displayAvRooms()">
 		</form>
 	</aside>
 </div>

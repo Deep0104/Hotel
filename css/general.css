@@ -70,10 +70,15 @@ aside {
 	background-color: #DFE0EB;
 	text-align: center;
 	padding: 30px 20px;
+	position: relative;
 }
 aside form {
 	position: fixed;
 	top: 130px;
+	right: 4.5%;
+	text-align: center;
+	z-index: 3;
+
 }
 aside input {
 	padding: 5px;
