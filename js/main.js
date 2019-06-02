@@ -78,7 +78,7 @@ $(function() {
 
 	$.ajax({
 		url: pageName + ".html",
-		dataType : "html",
+		dataType : "text",
 		success: function (data)
 		{
 			document.getElementById("content").innerHTML = data;
@@ -107,20 +107,20 @@ $(function() {
 // Pagination
 var images, imgContainer, current, start, end;
 function setVar() {
-	images = ["img/2.jpg", "img/3.jpg", "img/4.jpg", "img/room3.jpg", "img/castelmezzano-1979546_1920.jpg", 
-	"img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room1.jpg", "img/room2.jpg", "img/room3.jpg", 
-	"img/rough-horn-2146181_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room2.jpg", 
-	"img/rough-horn-2146181_1920.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", 
-	"img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room1.jpg", 
-	"img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", 
-	"img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/2.jpg", 
-	"img/3.jpg", "img/4.jpg", "img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", 
-	"img/room1.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/mountains-1645078_1920.jpg", 
-	"img/norway-772991_1920.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/2.jpg", "img/3.jpg", 
-	"img/4.jpg","img/2.jpg", "img/3.jpg", "img/4.jpg", "img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg",
-	"img/norway-772991_1920.jpg", "img/room1.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", 
-	"img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", 
-	"img/2.jpg", "img/3.jpg", "img/4.jpg", "img/4.jpg", "img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg"];
+	images = ["img/2.jpg", "img/3.jpg", "img/4.jpg", "img/room3.jpg", "img/castelmezzano-1979546_1920.jpg",
+		"img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room1.jpg", "img/room2.jpg", "img/room3.jpg",
+		"img/rough-horn-2146181_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room2.jpg",
+		"img/rough-horn-2146181_1920.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg",
+		"img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room1.jpg",
+		"img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg",
+		"img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/2.jpg",
+		"img/3.jpg", "img/4.jpg", "img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg",
+		"img/room1.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/mountains-1645078_1920.jpg",
+		"img/norway-772991_1920.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg", "img/2.jpg", "img/3.jpg",
+		"img/4.jpg","img/2.jpg", "img/3.jpg", "img/4.jpg", "img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg",
+		"img/norway-772991_1920.jpg", "img/room1.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg",
+		"img/mountains-1645078_1920.jpg", "img/norway-772991_1920.jpg", "img/room2.jpg", "img/room3.jpg", "img/rough-horn-2146181_1920.jpg",
+		"img/2.jpg", "img/3.jpg", "img/4.jpg", "img/4.jpg", "img/castelmezzano-1979546_1920.jpg", "img/mountains-1645078_1920.jpg"];
 	imgContainer = document.getElementsByClassName('gallery-img');
 	current = document.getElementById('current-number');
 	start = (current.innerHTML - 1) * imgContainer.length;
@@ -128,18 +128,18 @@ function setVar() {
 		end = start + imgContainer.length;
 	}
 	else end += images.length - start;
-}	
+}
 
 function pagination() {
 	var next = document.getElementById('next');
 	var previous = document.getElementById('previous');
-	
+
 	function fillGalery() {
 		for (var i = 0; i < imgContainer.length; i++) {
 			imgContainer[i].innerHTML = '';
 		}
 		for (var i = 0, j = start; i < end - start, j < end; i++, j++) {
-			imgContainer[i].innerHTML = '<img src=' + images[j] + '>'; 
+			imgContainer[i].innerHTML = '<img src=' + images[j] + '>';
 		}
 	}
 	if (+current.innerHTML === 1) {
@@ -177,6 +177,7 @@ function createRoomsArr() {
 		url: 'rooms.json',
 		dataType: 'json',
 		success: function (data) {
+			console.log('i am here');
 			rooms = data;
 
 		}
@@ -184,7 +185,7 @@ function createRoomsArr() {
 }
 
 function createRoomsTable(arr) {
-	var body = document.getElementById('rooms-data'); 
+	var body = document.getElementById('rooms-data');
 	var table = document.createElement('table');
 	table.setAttribute('id', 'table')
 	table.innerHTML = `<thead id="thead">
@@ -213,17 +214,17 @@ function createRoomsTable(arr) {
 		var num = i + 1;
 		var trow = document.createElement('tr');
 		trow.innerHTML = '<td id="room-num">' + num + '</td>' +
-						 '<td id="type' + i + '\"><a href=' + a + '>' +arr[i].type + '</a></td>' +
-			             '<td id="adults' + i + '">' +arr[i].adults + '</td>' +
-			             '<td id="children' + i + '">' +arr[i].children + '</td>' +
-			             '<td id="beds' + i + '">' +arr[i].beds + '</td>' +
-			             '<td id="servises' + i + '">' +arr[i].servises + '</td>' +
-			             '<td id="area' + i + '">' + arr[i].area + '</td>' +
-			             '<td id="bathroom' + i + '">' +arr[i].bathroom + '</td>' +
-			             '<td id="price' + i + '">' +arr[i].price + '</td>';
+			'<td id="type' + i + '\"><a href=' + a + '>' +arr[i].type + '</a></td>' +
+			'<td id="adults' + i + '">' +arr[i].adults + '</td>' +
+			'<td id="children' + i + '">' +arr[i].children + '</td>' +
+			'<td id="beds' + i + '">' +arr[i].beds + '</td>' +
+			'<td id="servises' + i + '">' +arr[i].servises + '</td>' +
+			'<td id="area' + i + '">' + arr[i].area + '</td>' +
+			'<td id="bathroom' + i + '">' +arr[i].bathroom + '</td>' +
+			'<td id="price' + i + '">' +arr[i].price + '</td>';
 		tbody.appendChild(trow);
 
-			              
+
 	}
 	table.appendChild(tbody);
 	body.appendChild(table);
@@ -235,40 +236,34 @@ function setDisplay(element) {
 	body.style.display = display == 'none' ? 'block' : 'none';
 }
 
-function sortTable(index) {
-	var sort = document.getElementsByName('sort');
-	var sort_value;
+function sortTable(priceAscend) {
+
 	var table = document.getElementById('table');
 	var tbody = table.querySelector('tbody');
 	var tbodyArray = [].slice.call(tbody.rows);
-	
-	for(var i = 0; i < sort.length; i++){
-    	if(sort[i].checked) {
-        	sort_value = sort[i].value;
-    	}
-	}
-	switch (sort_value) {
-    case 'lowToHigh':
-      compare = function(a, b) {
-        if (a.cells[index].innerHTML > b.cells[index].innerHTML) return 1;
-        else return -1;
-      };
-      break;
-    case 'highToLow':
-      compare = function(a, b) {
-        if (a.cells[index].innerHTML < b.cells[index].innerHTML) return 1;
-        else return -1;
-      };
-      break;
-     case undefined:
-       compare = function() {
-       	return false;
-       }
+
+	switch (priceAscend) {
+		case 'lowToHigh':
+			compare = function(a, b) {
+				if (a.cells[8].innerHTML > b.cells[8].innerHTML) return 1;
+				else return -1;
+			};
+			break;
+		case 'highToLow':
+			compare = function(a, b) {
+				if (a.cells[8].innerHTML < b.cells[8].innerHTML) return 1;
+				else return -1;
+			};
+			break;
+		case 'none':
+			compare = function() {
+				return false;
+			};
 	}
 	tbodyArray.sort(compare);
 
 	for (var i = 0; i < tbodyArray.length; i++) {
-    	tbody.appendChild(tbodyArray[i]);
+		tbody.appendChild(tbodyArray[i]);
 	}
 
 	table.appendChild(tbody);
@@ -309,25 +304,34 @@ function filterTable() {
 }
 
 function sortFilter() {
-	sortTable(8);
+	var sort = document.getElementsByName('sort');
+	var sort_value;
+
+	for(var i = 0; i < sort.length; i++){
+		if(sort[i].checked) {
+			sort_value = sort[i].value;
+		}
+	}
+
+	sortTable(sort_value);
 	filterTable();
 }
 
 // Booking
-var roomsAvailable = [];
-function availableRooms() {
-	roomsAvailable.length = 0;
-	var checkIn = new Date(document.getElementsByName('chek-in')[0].valueAsDate);
-	var checkOut = new Date(document.getElementsByName('chek-out')[0].valueAsDate);
+
+// returns array of rooms regardless to filter params
+function getAvailableRooms(checkIn, checkOut, numOfAdults, numOfChildren) {
+
+	var availableRooms = [];
+
 	checkInMs = checkIn.getTime() - 10800000;
 	checkOutMs = checkOut.getTime() - 10800000;
-	var numOfAdults = document.getElementsByName('adults')[0].value;
-	var numOfChildren = document.getElementsByName('children')[0].value;
+
 	function notBelongsToInterval(element, index, array) {
-			if (element < checkInMs || element > checkOutMs) {
-				return element;
-			}
+		if (element < checkInMs || element > checkOutMs) {
+			return element;
 		}
+	}
 	for (var i = 0; i < rooms.length; i++) {
 		rooms[i].number = i + 1;
 		for (var j = 0; j < rooms[i].booked.length; j++) {
@@ -335,36 +339,53 @@ function availableRooms() {
 			rooms[i].booked[j] = date.getTime();
 		}
 		if (rooms[i].booked.every(notBelongsToInterval) && rooms[i].adults >= numOfAdults && rooms[i].children >= numOfChildren) {
-		roomsAvailable.push(rooms[i]);
+			availableRooms.push(rooms[i]);
 		}
 	}
+
+	return availableRooms;
 }
 
-function displayAvRooms() {
-	availableRooms();
-	if (document.getElementsByName('chek-in')[0].value == '' && document.getElementsByName('chek-out')[0].value == '') {
-		return;
-	}
+function findRooms() {
+	// gathering filters data
+	let checkIn = new Date(document.getElementsByName('chek-in')[0].valueAsDate);
+	let checkOut = new Date(document.getElementsByName('chek-out')[0].valueAsDate);
+	var numOfAdults = document.getElementsByName('adults')[0].value;
+	var numOfChildren = document.getElementsByName('children')[0].value;
+
+	let availableRoomsArray = getAvailableRooms(checkIn, checkOut, numOfAdults, numOfChildren);
+
+	// print search result
 	var container = document.createElement('div');
 	container.id = 'available-rooms-container';
 	container.innerHTML = '<button id="close">X<div>';
-	if (roomsAvailable.length == 0) {
+	if (availableRoomsArray.length === 0) {
 		var p = document.createElement('p');
 		p.innerHTML = 'There are no free rooms. Please try another dates.';
 		container.appendChild(p);
 	} else {
 		var table = document.createElement('table');
-		for (var i = 0; i < roomsAvailable.length; i++) {
-		var trow = document.createElement('tr');
-		trow.innerHTML = '<td>№ ' + roomsAvailable[i].number + '</td><td>' + roomsAvailable[i].type + '</td><td>' + 
-		roomsAvailable[i].price + ' $</td><td class="bookingTable"><form onsubmit="return false" method="post" action="#"><input type="text" placeholder="Name & Phone Number" required><input type="submit" class="button" value="Book"></form></td>'
-		table.appendChild(trow);
+		for (var i = 0; i < availableRoomsArray.length; i++) {
+			var trow = document.createElement('tr');
+			trow.innerHTML = '<td>№ ' + availableRoomsArray[i].number + '</td><td>' + availableRoomsArray[i].type + '</td><td>' +
+				availableRoomsArray[i].price + ' $</td><td class="bookingTable">' +
+				'<form onsubmit="return false" method="post" action="#">' +
+				'<input type="hidden" name="room_number" value="' + availableRoomsArray[i].number + '">' +
+				'<input type="hidden" name="check_in" value="' + checkIn.toDateString() + '">' +
+				'<input type="hidden" name="check_out" value="' + checkOut.toDateString() + '">' +
+				'<input type="text" placeholder="Name & Phone Number" required>' +
+				'<input type="submit" class="button" value="Book">' +
+				'</form></td>';
+			table.appendChild(trow);
 		}
 		container.appendChild(table);
 	}
-	document.body.appendChild(container);
+
+	let searchResults = document.getElementById('free-rooms');
+	searchResults.appendChild(container);
+
 	document.getElementById("close").addEventListener('click', function() {close();})
 }
 function close() {
-	document.body.removeChild(document.getElementById('available-rooms-container'));	
+	document.getElementById('free-rooms').removeChild(document.getElementById('available-rooms-container'));
 }
