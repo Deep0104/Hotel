@@ -36,20 +36,44 @@ function slide(container) {
 }
 
 
-// // Search
-// function searchTextOnPage(inputId){
-// 	var content = document.getElementById('content');
-// 	var span = content.getElementsByTagName('span');
-// 	for (var i = 0; i < span.length; i++) {
-// 		span[i].removeAttribute('style');
-// 	}
-// 	var text = document.getElementById(inputId).value
-// 	var replace = new RegExp(text, "ig");
-// 	console.log(replace);
-// 		if (content.innerHTML.search(replace) != -1) {
-//     		content.innerHTML = content.innerHTML.replace(replace, '<span style="background-color:yellow">' + text + '</span>')
-//     		}
-// }
+// Search
+function searchText(inputId, textToFind, whereToFind, whereToPut){
+	let text = new RegExp(textToFind, "ig");
+	console.log(text);
+	for (var i = 0; i < whereToFind.length; i++) {
+		if (whereToFind[i].description.search(text) != -1) {
+			let div = document.createElement('div');
+			var a = document.createElement('a');
+			div.setAttribute('class', 'search-item');
+			var href;
+			if (whereToFind[i].type == "Standard double room") {
+			href = "?page=room1";
+			}
+			else if (whereToFind[i].type == "Econom single room") {
+				href = "?page=room2";
+			}
+			else href = "?page=room3";
+			a.setAttribute('href', href);
+    		a.innerHTML = whereToFind[i].description;
+    		a.innerHTML = 'Room ' + whereToFind[i].num + '<br><b>' + whereToFind[i].type + '</b><br>' + a.innerHTML.replace(text, '<span style="background-color:yellow">' + textToFind + '</span>');
+    		div.appendChild(a);
+			whereToPut.appendChild(div);
+    	}
+	}
+	if (whereToPut.innerHTML == '') {
+		whereToPut.innerHTML = 'Nothing was found :(';	
+	}
+}
+
+function createSearch() {
+	let location = window.location.search.substring(1);
+	let UrlPar = location.split('&');
+	let aaa = UrlPar[1].split('=');
+	let textToFind = aaa[1];
+	let whereToFind = rooms;
+	let whereToPut = document.getElementById('search-results');
+	searchText('search', textToFind, whereToFind, whereToPut);
+}
 
 createRoomsArr();
 var rooms = [];
@@ -96,6 +120,10 @@ $(function() {
 			var roomsPage = document.getElementById('rooms');
 			if (roomsPage) {
 				createRoomsTable(rooms);
+			}
+			var search = document.getElementById('search-results');
+			if (search) {
+				createSearch();
 			}
 		},
 		error: function () {
@@ -177,10 +205,11 @@ function createRoomsArr() {
 		url: 'rooms.json',
 		dataType: 'json',
 		success: function (data) {
-			console.log('i am here');
 			rooms = data;
-
-		}
+			for (var i = 0; i < rooms.length; i++) {
+				rooms[i].num = i + 1;
+			}
+			}
 	});
 }
 
@@ -211,9 +240,8 @@ function createRoomsTable(arr) {
 			a = "?page=room2";
 		}
 		else a = "?page=room3";
-		var num = i + 1;
 		var trow = document.createElement('tr');
-		trow.innerHTML = '<td id="room-num">' + num + '</td>' +
+		trow.innerHTML = '<td id="room-num">' + arr[i].num + '</td>' +
 			'<td id="type' + i + '\"><a href=' + a + '>' +arr[i].type + '</a></td>' +
 			'<td id="adults' + i + '">' +arr[i].adults + '</td>' +
 			'<td id="children' + i + '">' +arr[i].children + '</td>' +
@@ -245,19 +273,20 @@ function sortTable(priceAscend) {
 	switch (priceAscend) {
 		case 'lowToHigh':
 			compare = function(a, b) {
-				if (a.cells[8].innerHTML > b.cells[8].innerHTML) return 1;
+				if (+a.cells[8].innerHTML > +b.cells[8].innerHTML) return 1;
 				else return -1;
 			};
 			break;
 		case 'highToLow':
 			compare = function(a, b) {
-				if (a.cells[8].innerHTML < b.cells[8].innerHTML) return 1;
+				if (+a.cells[8].innerHTML < +b.cells[8].innerHTML) return 1;
 				else return -1;
 			};
 			break;
 		case 'none':
-			compare = function() {
-				return false;
+			compare = function(a, b) {
+				if (+a.cells[0].innerHTML > +b.cells[0].innerHTML) return 1;
+				else return -1;
 			};
 	}
 	tbodyArray.sort(compare);
@@ -269,12 +298,8 @@ function sortTable(priceAscend) {
 	table.appendChild(tbody);
 }
 
-function filterTable() {
-	var values = [];
-	var checkbox = document.getElementsByClassName('checkbox');
-	var filterPrice = document.getElementsByClassName('filterPrice');
+function filterTable(checkbox, filterPrice, table) {
 	var lowestPrice, highestPrice;
-	var table = document.getElementById('table');
 	var tbody = table.querySelector('tbody');
 	for (var i = 0; i < tbody.rows.length; i++) {
 		tbody.rows[i].style.display = 'table-row';
@@ -306,6 +331,9 @@ function filterTable() {
 function sortFilter() {
 	var sort = document.getElementsByName('sort');
 	var sort_value;
+	var checkbox = document.getElementsByClassName('checkbox');
+	var filterPrice = document.getElementsByClassName('filterPrice');
+	var table = document.getElementById('table');
 
 	for(var i = 0; i < sort.length; i++){
 		if(sort[i].checked) {
@@ -314,7 +342,7 @@ function sortFilter() {
 	}
 
 	sortTable(sort_value);
-	filterTable();
+	filterTable(checkbox, filterPrice, table);
 }
 
 // Booking
@@ -380,12 +408,10 @@ function findRooms() {
 		}
 		container.appendChild(table);
 	}
-
-	let searchResults = document.getElementById('free-rooms');
-	searchResults.appendChild(container);
+	document.body.appendChild(container);
 
 	document.getElementById("close").addEventListener('click', function() {close();})
 }
 function close() {
-	document.getElementById('free-rooms').removeChild(document.getElementById('available-rooms-container'));
+	document.body.removeChild(document.getElementById('available-rooms-container'));
 }
