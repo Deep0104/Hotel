@@ -58,8 +58,11 @@ function searchText(inputId, textToFind, whereToFind, whereToPut){
     		div.appendChild(a);
 			whereToPut.appendChild(div);
     	}
+
 	}
-	if (whereToPut.innerHTML == '') {
+	let textContent = whereToPut.textContent;
+	console.log(textContent.length);
+	if (textContent.length <= 2) {
 		whereToPut.innerHTML = 'Nothing was found :(';	
 	}
 }
@@ -352,8 +355,8 @@ function getAvailableRooms(checkIn, checkOut, numOfAdults, numOfChildren) {
 
 	var availableRooms = [];
 
-	checkInMs = checkIn.getTime() - 10800000;
-	checkOutMs = checkOut.getTime() - 10800000;
+	checkInMs = checkIn.getTime();
+	checkOutMs = checkOut.getTime();
 
 	function notBelongsToInterval(element, index, array) {
 		if (element < checkInMs || element > checkOutMs) {
@@ -375,6 +378,8 @@ function getAvailableRooms(checkIn, checkOut, numOfAdults, numOfChildren) {
 }
 
 function findRooms() {
+	if (document.getElementsByName('chek-in')[0].value == '' || 
+		document.getElementsByName('chek-out')[0].value == '') return;
 	// gathering filters data
 	let checkIn = new Date(document.getElementsByName('chek-in')[0].valueAsDate);
 	let checkOut = new Date(document.getElementsByName('chek-out')[0].valueAsDate);
@@ -384,9 +389,11 @@ function findRooms() {
 	let availableRoomsArray = getAvailableRooms(checkIn, checkOut, numOfAdults, numOfChildren);
 
 	// print search result
+	var div = document.createElement('div');
+	div.id = 'available-rooms-window'
 	var container = document.createElement('div');
 	container.id = 'available-rooms-container';
-	container.innerHTML = '<button id="close">X<div>';
+	div.innerHTML = '<button id="close">X<div>';
 	if (availableRoomsArray.length === 0) {
 		var p = document.createElement('p');
 		p.innerHTML = 'There are no free rooms. Please try another dates.';
@@ -407,11 +414,12 @@ function findRooms() {
 			table.appendChild(trow);
 		}
 		container.appendChild(table);
+		div.appendChild(container);
 	}
-	document.body.appendChild(container);
+	document.body.appendChild(div);
 
 	document.getElementById("close").addEventListener('click', function() {close();})
 }
 function close() {
-	document.body.removeChild(document.getElementById('available-rooms-container'));
+	document.body.removeChild(document.getElementById('available-rooms-window'));
 }

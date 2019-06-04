@@ -244,6 +244,8 @@ header {
 	background-image: url('../img/rough-horn-2146181_1920.jpg');
 	background-position: center;
 	background-blend-mode: multiply;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .booking-form {
 	display: flex;
@@ -364,7 +366,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 	background-color: rgba(78, 80, 130, 0.3);
 }
 .book h2 {
@@ -412,10 +414,13 @@ header {
 	width: 115px;
 	font-size: 1em;
 }
-#sort-filter input {
+#sort-filter input .button {
 	width: 50px;
 }
-#available-rooms-container {
+#sort-filter input {
+	width: 30px;
+}
+#available-rooms-window {
 	position: absolute;
 	z-index: 4;
 	width: 90%;
@@ -428,7 +433,7 @@ header {
 	box-shadow: 0 0 200px rgb(78, 80, 130);
 	padding: 30px;
 }
-#available-rooms-container button {
+#close {
 	position: absolute;
 	top: -10px;
 	right: -10px;
@@ -439,9 +444,14 @@ header {
 	box-sizing: border-box;
 	border: 2px solid red;
 	color: red;
+	z-index: 3;
+}
+#available-rooms-container tr td:nth-child(4) {
+	text-align: center;
 }
 
 #available-rooms-container table {
+	min-width: 500px;
 	width: 100%;
 	text-align: justify;
 }
@@ -499,9 +509,16 @@ ul.breadcrumb li a:hover {
 
 
 
-
+@media (max-width: 899px) {
+	#table tr td:nth-child(3), #table tr th:nth-child(3), #table tr td:nth-child(4), #table tr th:nth-child(4), #table tr td:nth-child(5), #table tr th:nth-child(5), #table tr td:nth-child(6), #table tr th:nth-child(6), #table tr td:nth-child(7), #table tr th:nth-child(7)  {
+		display: none;
+	}
+}
 
 @media (max-width: 599px), (orientation: portrait){
+	#sort-filter {
+		text-align: left;
+	}
 	.menu-small {
 		display: block;
 		margin: 20px;
@@ -557,10 +574,12 @@ ul.breadcrumb li a:hover {
 		height: 100vh;
 		background-image: url(../img/mountains-1645078_1920.jpg);
 		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 	.first-content {
 		position: absolute;
-		top: 55%;
+		top: 58%;
 	    left: 50%;
 	    margin-right: -50%;
 	    transform: translate(-50%, -50%);
@@ -669,17 +688,56 @@ ul.breadcrumb li a:hover {
 	}
 	.main section article {
 		padding: 0 30px;
+		text-align: justify;
 	}
 	#facilities {
 		display: flex;
 		flex-wrap: wrap;
 	}
+	#content section {
+		text-align: center;
+	}
+	.activities-page-item {
+		width: 100%;
+		text-align: justify;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+	#booking-page {
+		height: 85vh;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	#booking-page .booking-form {
+		margin: 0;
+		justify-content: center;
+	}
+	#available-rooms-container {
+		overflow-y: scroll;
+	}
+	.contacts-page {
+		display: flex;
+		flex-direction: column;
+	}
+	.contacts-page iframe {
+		width: 90%;
+		height: 300px;
+		margin: 0 auto;
+		order: 1;
+	}
+	.contacts-i {
+		flex-direction: column;
+		order: 2;
+	}
+	.contacts-i .adress, .contacts-i form {
+		width: 87%;
+	}
+}
 
 
 
 
-
-@media (min-width: 600px) and (max-width: 899px), (min-width: 600px) and (max-width: 899px) and (orientation: landscape) {
+@media (min-width: 600px) and (max-width: 899px), (min-width: 600px) and (max-width: 899px) and (orientation: landscape){
 	.first-content {
 		width: 60%;
 	}
@@ -703,9 +761,8 @@ ul.breadcrumb li a:hover {
 		right: -8px;
 		z-index: 3;
 		background-color: #fff;
-		width: 100%;
+		width: 100vw;
 		text-align: center;
-		
 	}
 	#nav-menu {
 		display: none;
@@ -741,7 +798,7 @@ ul.breadcrumb li a:hover {
 	}
 	.first-content {
 		position: absolute;
-		top: 55%;
+		top: 58%;
 	    left: 50%;
 	    margin-right: -50%;
 	    transform: translate(-50%, -50%);
@@ -773,5 +830,66 @@ ul.breadcrumb li a:hover {
 	}
 	.activities-content {
 		flex-direction: column;
+	}
+	.rooms-info {
+		display: none;
+	}
+	.rooms-button {
+		display: none;
+	}
+	#content section {
+		text-align: center;
+	}
+	#content section article p {
+		text-align: justify;
+	}
+	.activities-page-item {
+		width: 100%;
+		text-align: justify;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+	footer h1 {
+		display: none;
+	}
+	footer form {
+		width: 100%;
+	}
+	footer p {
+		text-align: center;
+	}
+	#sort-filter {
+		text-align: left;
+	}
+	.contacts-page {
+		display: flex;
+		flex-direction: column;
+	}
+	.contacts-page iframe {
+		width: 90%;
+		min-height: 300px;
+		margin: 0 auto;
+		order: 1;
+	}
+	.contacts-i {
+		flex-direction: column;
+		order: 2;
+	}
+	.contacts-i .adress, .contacts-i form {
+		width: 87%;
+	}
+}
+
+
+
+@media (min-width: 900px) and (max-width: 1199px) {
+	.open-submenu {
+		display: inline;
+	}
+	.nav-menu > li:hover .submenu {
+		display: none;
+	}
+	.contacts-i .adress, .contacts-i form {
+		width: 45%;
 	}
 }
