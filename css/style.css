@@ -514,6 +514,11 @@ ul.breadcrumb li a:hover {
 		display: none;
 	}
 }
+@media (max-width: 599px), (orientation: lanscape) {
+	#booking-page {
+   		height: 120vh;
+   	}
+}
 
 @media (max-width: 599px), (orientation: portrait){
 	#sort-filter {
