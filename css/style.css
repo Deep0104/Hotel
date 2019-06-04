@@ -45,13 +45,22 @@ header {
 .nav-menu {
 	margin: 21px 0;
 }
+.menu-small {
+	display: none;
+}
 .nav-menu-item {
 	display: inline;
 	border-left: 1px solid #0D61BC;
 	box-sizing: border-box;
 	position: relative;
 }
-.nav-menu-item:first-child {
+.open-submenu {
+	display: none;
+}
+#home {
+	display: none;
+}
+.nav-menu-item:nth-last-child(n+6) {
 	border: none;
 }
 .nav-menu-item a {
@@ -121,14 +130,6 @@ header {
     transform: translate(-50%, -50%);
     border: 2px solid #fff;
 }
-/*aside {
-	text-align: center;
-	padding: 30px 20px;
-}
-aside input {
-	padding: 5px;
-	margin: 10px 20px 20px 10px;
-}*/
 .about-us {
 	padding: 40px;
 	display: flex;
@@ -190,7 +191,6 @@ aside input {
 .activities-item p {
 	text-align: justify;
 	margin-bottom: 40px;
-	font-size: 1.2vw;
 }
 .odd-info {
 	background-color: #4E5082;
@@ -294,11 +294,10 @@ aside input {
 .gallery-section {
 	width: 100%;
 	text-align: center;
-	position: relative;
-	top: 85px;
 	box-sizing: border-box;
 	min-height: 100vh;
 	margin-bottom: 115px;
+	margin-top: 100px;
 }
 .gallery {
 	display: flex;
@@ -309,7 +308,7 @@ aside input {
 	max-width: 300px;
 	height: 300px;
 	object-fit: cover;
-	margin: 20px;
+	margin: 20px auto;
 	overflow: hidden;
 }
 .gallery-img img {
@@ -469,4 +468,310 @@ aside input {
 }
 .search-item:hover {
 	box-shadow: 0 0 10px rgb(223, 224, 235);
+}
+ul.breadcrumb {
+  position: absolute;
+  top: 95px;
+  text-align: center;
+  list-style: none;
+  text-align: left;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+#first-small {
+		display: none;
+}
+
+
+
+
+
+@media (max-width: 599px), (orientation: portrait){
+	.menu-small {
+		display: block;
+		margin: 20px;
+		color: #0D61BC;
+		width: 50px;
+		position: absolute;
+		right: 0px;
+	}
+	.nav-menu {
+		position: absolute;
+		top: 30px;
+		right: -4px;
+		z-index: 3;
+		background-color: #fff;
+		width: 100vw;
+		text-align: center;
+		
+	}
+	#nav-menu {
+		display: none;
+	}
+	#home {
+	display: block;
+	}
+	.nav-menu-item {
+		display: block;
+		border: none;
+		border-bottom: 1px solid #0D61BC;
+		padding: 10px;
+	}
+	.nav-menu-item:nth-last-child(n+6) {
+	border-bottom: 1px solid #0D61BC;
+	}
+	.open-submenu {
+	display: inline;
+	}
+	.submenu {
+		position: relative;
+		display: none;
+		text-align: center;
+	}
+	.nav-menu > li:hover .submenu {
+	display: none;
+	}
+	.sidebar {
+		display: none;
+	}
+	#slider {
+		display: none;
+	}
+	#first-small {
+		display: block;
+		height: 100vh;
+		background-image: url(../img/mountains-1645078_1920.jpg);
+		background-position: top;
+	}
+	.first-content {
+		position: absolute;
+		top: 55%;
+	    left: 50%;
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+	    color: #fff;
+	    font-size: 3em;
+	    font-weight: bold;
+	}
+	.first-content .button {
+		border: 2px solid #fff;
+	}
+	.button {
+		font-size: 16px;
+	}
+	.main section {
+		width: 100vw;
+	}
+	.about-us {
+		display: flex;
+		flex-direction: column;
+	}
+	.about-us article {
+		padding: 0;
+		text-align: justify;
+		display: flex;
+		flex-direction: column;
+	}
+	.about-us .button {
+		align-self: center;
+	}
+	.activities {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+	.activities-content {
+		flex-direction: column;
+		padding: 0;
+		justify-content: center;
+		text-align: center;
+	}
+	.activities-item {
+		width: 90%;
+		margin: 5%;
+
+	}
+	#odd-info {
+		display: none;
+	}
+	.rooms {
+		display: flex;
+		flex-direction: column;
+	}
+	.room {
+		width: 100%;
+		margin: 0;
+	}
+	.rooms-info {
+		display: none;
+	}
+	.rooms-button {
+		display: none;
+	}
+	.booking-form {
+		flex-direction: column;
+	}
+	.contacts {
+		flex-direction: column;
+	}
+	.contacts-info {
+		width: 100%;
+	}
+	.contacts iframe {
+		display: none;
+	}
+	footer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 3px;
+	}
+	footer form {
+		width: 100%;
+	}
+	footer form input {
+		max-width: 50%;
+		display: inline;
+	}
+	footer .button {
+		display: inline;
+	}
+	footer h1 {
+		display: none;
+	}
+	footer p {
+		width: 100%;
+		text-align: center;
+	}
+	.main {
+		display: block;
+	}
+	.main section {
+		width: 100%;
+		padding: 100px 0;
+	}
+	.main section article {
+		padding: 0 30px;
+	}
+	#facilities {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+
+
+
+
+@media (min-width: 600px) and (max-width: 899px), (min-width: 600px) and (max-width: 899px) and (orientation: landscape) {
+	.first-content {
+		width: 60%;
+	}
+	#first-small {
+		display: block;
+		height: 100vh;
+		background-image: url(../img/mountains-1645078_1920.jpg);
+		background-position: top;
+	}
+	.menu-small {
+		display: block;
+		margin: 20px;
+		color: #0D61BC;
+		width: 50px;
+		position: absolute;
+		right: 15px;
+	}
+	.nav-menu {
+		position: absolute;
+		top: 30px;
+		right: -8px;
+		z-index: 3;
+		background-color: #fff;
+		width: 100%;
+		text-align: center;
+		
+	}
+	#nav-menu {
+		display: none;
+	}
+	#home {
+	display: block;
+	}
+	.nav-menu-item {
+		display: block;
+		border: none;
+		border-bottom: 1px solid #0D61BC;
+		padding: 10px;
+	}
+	.nav-menu-item:nth-last-child(n+6) {
+	border-bottom: 1px solid #0D61BC;
+	}
+	.open-submenu {
+	display: inline;
+	}
+	.submenu {
+		position: relative;
+		display: none;
+		text-align: center;
+	}
+	.nav-menu > li:hover .submenu {
+	display: none;
+	}
+	.sidebar {
+		display: none;
+	}
+	#slider {
+		display: none;
+	}
+	.first-content {
+		position: absolute;
+		top: 55%;
+	    left: 50%;
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+	    color: #fff;
+	    font-size: 3em;
+	    font-weight: bold;
+	}
+	.first-content .button {
+		border: 2px solid #fff;
+	}
+	.button {
+		font-size: 16px;
+	}
+	.main section {
+		width: 100vw;
+	}
+	.about-us {
+		display: flex;
+		flex-direction: column;
+	}
+	.about-us article {
+		padding: 0;
+		text-align: justify;
+		display: flex;
+		flex-direction: column;
+	}
+	.about-us .button {
+		align-self: center;
+	}
+	.activities-content {
+		flex-direction: column;
+	}
 }

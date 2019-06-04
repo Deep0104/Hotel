@@ -39,7 +39,6 @@ function slide(container) {
 // Search
 function searchText(inputId, textToFind, whereToFind, whereToPut){
 	let text = new RegExp(textToFind, "ig");
-	console.log(text);
 	for (var i = 0; i < whereToFind.length; i++) {
 		if (whereToFind[i].description.search(text) != -1) {
 			let div = document.createElement('div');
@@ -260,7 +259,8 @@ function createRoomsTable(arr) {
 
 function setDisplay(element) {
 	var body = document.getElementById(element);
-	var display = body.style.display;
+	var style = window.getComputedStyle(body);
+	var display = style.display;
 	body.style.display = display == 'none' ? 'block' : 'none';
 }
 

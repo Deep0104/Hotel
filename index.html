@@ -15,17 +15,19 @@
 	<div class="header-nav">
 		<h1><a href="?page=main" class="site-name">MountainHouse</a></h1>
 		<nav class="nav-panel">
-			<ul class="nav-menu">
+			<div class="menu-small"><h4 onclick="setDisplay('nav-menu')">menu</h4></div>
+			<ul class="nav-menu" id="nav-menu">
+				<li class="nav-menu-item" id="home"><a href="?page=main">Home</a></li>
 				<li class="nav-menu-item"><a href="?page=about_us">About Us</a></li>
-				<li class="nav-menu-item"><a href="?page=activities">Activities</a>
-					<ul class="submenu">
+				<li class="nav-menu-item"><a href="?page=activities">Activities</a><span onclick="setDisplay('activities-submenu')" class="open-submenu">></span>
+					<ul class="submenu" id="activities-submenu">
 						<li><a href="?page=mountain_snowmobile_tour">Mountain Snowmobile Tour</a></li>
 						<li><a href="?page=snowboard_ski_lessons">Snowboard & Ski Lessons</a></li>
 						<li><a href="?page=wine_tasting">Wine Tasting</a></li>
 					</ul>
 				</li>
-				<li class="nav-menu-item"><a href="?page=rooms">Rooms</a>
-					<ul class="submenu">
+				<li class="nav-menu-item"><a href="?page=rooms">Rooms</a><span onclick="setDisplay('rooms-submenu')" class="open-submenu">></span>
+					<ul class="submenu" id="rooms-submenu">
 						<li><a href="?page=room1">Room 1</a></li>
 						<li><a href="?page=room2">Room 2</a></li>
 						<li><a href="?page=room3">Room 3</a></li>
