@@ -101,10 +101,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 $(function() {
 
 	let pageName = getUrlParameter('page') === undefined ? 'main' : getUrlParameter('page');
-
 	$.ajax({
 		url: pageName + ".html",
 		dataType : "text",
+		cache: false,
 		success: function (data)
 		{
 			document.getElementById("content").innerHTML = data;
@@ -129,7 +129,7 @@ $(function() {
 			}
 		},
 		error: function () {
-			document.getElementById("content").innerHTML = '404. Page is not found(';
+			document.getElementById("content").innerHTML = '<div class="main"><section>404. Page is not found(</section></div>';
 		}
 	});
 });
@@ -206,6 +206,7 @@ function createRoomsArr() {
 	$.ajax({
 		url: 'rooms.json',
 		dataType: 'json',
+		cache: false,
 		success: function (data) {
 			rooms = data;
 			for (var i = 0; i < rooms.length; i++) {

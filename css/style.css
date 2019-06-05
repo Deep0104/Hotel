@@ -246,6 +246,7 @@ header {
 	background-blend-mode: multiply;
 	background-size: cover;
 	background-repeat: no-repeat;
+	position: relative;
 }
 .booking-form {
 	display: flex;
@@ -421,17 +422,22 @@ header {
 	width: 30px;
 }
 #available-rooms-window {
-	position: absolute;
+	position: fixed;
 	z-index: 4;
 	width: 90%;
 	right: 5%;
-	top: 65px;
+	top: 10px;
 	background-color: #fff;
 	box-sizing: border-box;
 	border: 4px solid rgb(78, 80, 130);
 	border-radius: 15px;
 	box-shadow: 0 0 200px rgb(78, 80, 130);
 	padding: 30px;
+	
+}
+#available-rooms-container {
+	overflow-y: scroll;
+	max-height: 75vh;
 }
 #close {
 	position: absolute;
